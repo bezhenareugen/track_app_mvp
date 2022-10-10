@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:track_app/components/delivery_info.dart';
 import 'package:track_app/models/status_model.dart';
+import 'package:track_app/screens/delivery_screen.dart';
 
 class TabBarMain extends StatefulWidget {
   const TabBarMain({super.key});
@@ -90,12 +92,15 @@ class _FavoriteWidgetState extends State<TabBarMain> {
               ],
             ),
           ),
-          body: const TabBarView(
-            children: [
-              Text("Active page"),
-              Text("Delivered page"),
-              Text("Processing page"),
-            ],
+          body: const Padding(
+            padding: EdgeInsets.only(left: 10, top: 15, right: 10),
+            child: TabBarView(
+              children: [
+                Text("Active page"),
+                DeliveryScreen(),
+                Text("Processing page"),
+              ],
+            ),
           ),
         ),
       ),
